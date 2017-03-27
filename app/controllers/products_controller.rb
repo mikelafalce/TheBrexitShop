@@ -13,6 +13,12 @@ class ProductsController < ApplicationController
 
     @review   = Review.new
     @reviews  = @product.reviews
+
+    if @review.blank?
+      @avg_review = 0
+    else
+      @avg_review = @reviews.average(:rating).round(2)
+    end    
   end
 
   def new

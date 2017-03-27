@@ -10,6 +10,9 @@
   <%= @product.image %>
 </p>
 
+<div class="star-rating" data-score= <%= @avg_review %></div>
+<em><%= "#{@reviews.length} reviews" %></em>
+
 <p>
   <strong>Description:</strong>
   <%= @product.description %>
@@ -48,16 +51,15 @@
     </div>
   <% end %>
 
+  <%# Form %>
   <div class="field">
     <%= f.label :rating %>
-    <%= f.number_field :rating %>
+    <div id="star-rating"></div>
   </div>
-
   <div class="field">
     <%= f.label :comment %>
     <%= f.text_area :comment %>
   </div>
-
   <div class="actions">
     <%= f.submit %>
   </div>
@@ -68,11 +70,27 @@
   <h3>No reviews just yet, click here to add yours</h3>
 <% else %>
   <h3>Reviews</h3>
-  <div id='reviews'>
     <% @reviews.each do |review| %>
-      <%= review.user.username %>:
-      <%= review.rating %>
-      <%= review.comment %>
+    <div class="reviews">
+      <div class="star-rating" data-score= <%= review.rating %></div>
+        <p><%= review.user.username %>:</p>
+        <p><%= review.comment %></p>
+    </div>
+    <hr>
     <% end %>
-</div>
 <% end %>
+
+<script>
+  $('.star-rating').raty({
+    path: '/assets/',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
+
+  $('#star-rating').raty({
+    path: '/assets/',
+    scoreName: 'review[rating]'
+  });
+</script>
