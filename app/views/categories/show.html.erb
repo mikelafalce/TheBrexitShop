@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<h3> Products under <%= @category.name %> </h3>
+<% Product.where(category_id: @category.id).each do |product| %>
+<li> <%= product.title %> </li>
+<% end %>
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>
