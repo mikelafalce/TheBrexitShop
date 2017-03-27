@@ -7,11 +7,13 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @product.image %>
+  <%= image_tag @product.image.url if @product.image.present? %>
 </p>
 
-<div class="star-rating" data-score= <%= @avg_review %></div>
-<em><%= "#{@reviews.length} reviews" %></em>
+<%# <div class="new"> %>
+  <div class="star-rating" data-score= <%= @avg_review %></div>
+  <em><%= "#{@reviews.length} reviews" %></em>
+<%# </div> %>
 
 <p>
   <strong>Description:</strong>
@@ -25,17 +27,17 @@
 
 <p>
   <strong>Price:</strong>
-  <%= @product.price %>
+  <%= quid(@product.price) %>
 </p>
-<% if user_signed_in? && can?(:manage, @product) %>
-  <%= link_to 'Edit', edit_product_path(@product) %> |
-<% end %>
-<% if user_signed_in?%>
-  <%= link_to "", class: "button", data: {target: @cart_action, addUrl: add_to_cart_path(@product), removeUrl: remove_from_cart_path(@product)} do%>
+  <% if user_signed_in? && can?(:manage, @product) %>
+    <%= link_to 'Edit', edit_product_path(@product) %> |
+  <% end %>
+  <% if user_signed_in?%>
+    <%= link_to "", class: "button", data: {target: @cart_action, addUrl: add_to_cart_path(@product), removeUrl: remove_from_cart_path(@product)} do%>
     <i class="fi-shopping-cart"></i>
     <span><%=@cart_action%></span> Cart
   <%end%>
-<%end%>
+  <%end%>
 <%#= link_to 'Back', products_path %>
 <hr>
 <%= form_for([@product, @review]) do |f| %>

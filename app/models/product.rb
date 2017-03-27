@@ -1,11 +1,13 @@
 class Product < ApplicationRecord
-  searchkick
+  # searchkick
+  mount_uploader :image, ImageUploader
+
   belongs_to :category
   belongs_to :user
 
   has_many :purchases
   has_many :buyers, through: :purchases
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 
   validates :title, presence: true, uniqueness: { case_sensitive: false }
   validates :description, presence: true, length: { minimum: 5 }
@@ -17,6 +19,12 @@ class Product < ApplicationRecord
     else
       "Add to"
     end
+  end
+
+  private
+
+  def self.search(search)
+    where("title ILIKE ?", "%#{search}%")
   end
 
 end

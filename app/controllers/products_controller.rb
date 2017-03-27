@@ -1,18 +1,23 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
   before_action :find_product, only: [:show, :edit, :update, :destroy]
-  before_action(:authorize, {only: [:edit, :destroy, :update] })
+  before_action(:authorize, {only: [:new, :edit, :destroy, :update] })
 
   def search
     if params[:search].present?
       @products = Product.search(params[:search])
     else
       @products = Product.all
-    end    
+    end
   end
 
   def index
     @products = Product.all
+    if params[:search]
+      @products = Product.search(params[:search]).order("title DESC")
+    else
+      @products = Product.all
+    end
   end
 
   def show
@@ -22,7 +27,7 @@ class ProductsController < ApplicationController
     @review   = Review.new
     @reviews  = @product.reviews
 
-    if @review.blank?
+    if @reviews.blank?
       @avg_review = 0
     else
       @avg_review = @reviews.average(:rating).round(2)
@@ -68,6 +73,7 @@ class ProductsController < ApplicationController
 
   def product_params
     product_params = params.require(:product).permit(:title,
+                                                     :image,
                                                      :description,
                                                      :price,
                                                      :category_id)

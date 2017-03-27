@@ -2,12 +2,16 @@
   <div class="small-12 large-10 large-offset-1 columns">
     <p id="notice"><%= notice %></p>
 
+    <% if @products.blank? %>
+      <h4>There are no products containing the term <%= params[:search] %>.</h4>
+    <% end %>
+
     <h1>Products</h1>
       <% @products.each do |product| %>
           <%= product.title %>
-          <%= product.image %>
+          <%= image_tag product.image.url(:list_display) if product.image.present? %>
           <%= product.description %>
-          <%= product.price %>
+          <%= quid(product.price) %>
           <%= link_to 'Show', product %>
             <% if user_signed_in? && can?(:manage, @product) %>
             <%= link_to 'Edit', edit_product_path(product) %>
