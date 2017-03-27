@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="small-12 large-10 large-offset-1 columns">
+    <p id="notice"><%= notice %></p>
+
+    <h1>Products</h1>
+      <% @products.each do |product| %>
+          <%= product.title %>
+          <%= product.image %>
+          <%= product.description %>
+          <%= product.price %>
+          <%= link_to 'Show', product %>
+            <% if user_signed_in? && can?(:manage, @product) %>
+            <%= link_to 'Edit', edit_product_path(product) %>
+            <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+          <hr>
+      <% end %>
+
+      <%= link_to 'New Product', new_product_path %>
+  </div>
+</div>

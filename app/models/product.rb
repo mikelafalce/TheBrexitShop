@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  searchkick
   belongs_to :category
   belongs_to :user
 

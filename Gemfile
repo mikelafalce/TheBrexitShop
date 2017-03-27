@@ -43,6 +43,7 @@ gem 'foundation-rails'
 gem 'braintree'
 gem 'figaro'
 gem 'gon'
+gem 'searchkick'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

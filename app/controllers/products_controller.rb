@@ -3,6 +3,14 @@ class ProductsController < ApplicationController
   before_action :find_product, only: [:show, :edit, :update, :destroy]
   before_action(:authorize, {only: [:edit, :destroy, :update] })
 
+  def search
+    if params[:search].present?
+      @products = Product.search(params[:search])
+    else
+      @products = Product.all
+    end    
+  end
+
   def index
     @products = Product.all
   end
@@ -18,7 +26,7 @@ class ProductsController < ApplicationController
       @avg_review = 0
     else
       @avg_review = @reviews.average(:rating).round(2)
-    end    
+    end
   end
 
   def new

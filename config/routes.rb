@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :users
 
   resources :products do
+    collection do
+      get 'search'
+    end
     resources :reviews, only: [:create, :show, :destroy]
   end
 
