@@ -11,7 +11,7 @@
 </p>
 
 <%# <div class="new"> %>
-  <div class="star-rating" data-score= <%= @avg_review %></div>
+  <div class="star-rating" data-score= <%= @avg_review %>></div>
   <em><%= "#{@reviews.length} reviews" %></em>
 <%# </div> %>
 
@@ -74,7 +74,7 @@
   <h3>Reviews</h3>
     <% @reviews.each do |review| %>
     <div class="reviews">
-      <div class="star-rating" data-score= <%= review.rating %></div>
+    <div class="star-rating" data-score= <%= review.rating %>></div>
         <p><%= review.user.username %>:</p>
         <p><%= review.comment %></p>
     </div>
