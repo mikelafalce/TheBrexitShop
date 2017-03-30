@@ -14,7 +14,7 @@ class TransactionsController < ApplicationController
                   customer: {
                     first_name: params[:first_name],
                     last_name: params[:last_name],
-                    company: params[:company],
+                    # company: params[:company],
                     email: current_user.email,
                     phone: params[:phone]
                   },

@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
 
-  has_many :purchases, foreign_key: :buyer_id
-  has_many :products, through: :purchases
+  has_many :purchases, foreign_key: :buyer_id, dependent: :nullify
+  has_many :products, through: :purchases, dependent: :nullify
   has_many :reviews, dependent: :destroy
 
   before_validation :downcase_email

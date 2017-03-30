@@ -12,7 +12,8 @@
 
 <%# <div class="new"> %>
   <div class="star-rating" data-score= <%= @avg_review %>></div>
-  <em><%= "#{@reviews.length} reviews" %></em>
+  <em><%= pluralize @reviews.count, 'review' %>
+  <em><%#= "#{@reviews.length} reviews" %></em>
 <%# </div> %>
 
 <p>

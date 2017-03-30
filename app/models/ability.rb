@@ -10,7 +10,7 @@ class Ability
     end
 
     # can :manage, Review do |review|
-    #   review.user == user
+    #   review.user == users
     # end
 
   end
