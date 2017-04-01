@@ -13,8 +13,7 @@
 	<path fill="#F3F2F1" stroke="#ED474A" stroke-miterlimit="10" d="M52,215"/>
 </g>
 <g id="Background">
-	<g id="Bckgd_Color">
-	</g>
+	<rect x="3.115" y="-4.389" fill="#FFFFFF" width="1277.936" height="683.966"/>
 	<g>
 		
 			<ellipse fill="none" stroke="#EDEDED" stroke-width="2" stroke-miterlimit="10" cx="623.371" cy="577.252" rx="8.021" ry="7.971"/>

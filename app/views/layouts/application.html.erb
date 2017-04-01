@@ -17,33 +17,6 @@
 
   <body>
 
-
-  <div class="shipping-info small-12 columns">
-    <p>free shipping on all domestic and EU orders over £50 | no duties
-     applied to orders outside UK until they are*</p>
-   </div>
-   <div class="user-signed-in small-12 columns">
-     <% if user_signed_in? %>
-      <div class="user-info">
-        <li><%= link_to current_user.username, user_path(current_user) %> | </li>
-        <li><%= link_to 'Sign Out', sessions_path, method: :delete %></li>
-      </div>
-      <div class="shopping">
-        <li><%= link_to cart_path do%>
-        <%= image_tag("cart.svg") %>
-        (<span class="cart-count"><%=current_user.cart_count%></span>)
-        <%end%>
-      </div>
-      <div class="user-info">
-        <% else %>
-          <li><%= link_to 'Sign Up', new_user_path %></li>
-          <li><%= link_to 'Login', new_session_path %></li>
-        <% end %>
-      </div>
-   </div>
-
-
-
     <%= render "layouts/nav" %>
 
     <%= yield %>
