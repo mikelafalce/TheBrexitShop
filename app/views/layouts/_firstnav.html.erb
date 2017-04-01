@@ -1,0 +1,39 @@
+<div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
+  <button class="menu-icon" type="button" data-toggle="example-menu"></button>
+  <div class="title-bar-title">Menu</div>
+</div>
+
+<div class="top-bar" id="example-menu">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text"><a href="/">Site Title</a></li>
+      <li>
+        <a href="#">View Products</a>
+        <ul class="menu vertical">
+          <li><a href="#">All</a></li>
+          <li><a href="#">By Category</a></li>
+        </ul>
+        <div class="right-items">
+          <% if user_signed_in? %>
+            <li><%= link_to current_user.username, user_path(current_user) %></li>
+            <li><%= link_to 'Sign Out', sessions_path, method: :delete %></li>
+            <li>
+                <%= link_to cart_path do%>
+                <i class="fi-shopping-cart"></i>
+                My Cart
+                (<span class="cart-count"><%=current_user.cart_count%></span>)
+                <%end%>
+            </li>
+          <% else %>
+            <li><%= link_to 'Sign Up', new_user_path %></li>
+            <li><%= link_to 'Login', new_session_path %></li>
+          <% end %>
+          <%= form_tag(products_path, :method => "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Search Products" %>
+            <%= submit_tag "Search", :name => nil %>
+          <% end %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

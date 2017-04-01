@@ -61,5 +61,6 @@ class CategoriesController < ApplicationController
     if cannot?(:manage, @category)
       redirect_to root_path, alert: 'Not authorized!'
       # redirect_to edit_post_path
+    end
   end
 end

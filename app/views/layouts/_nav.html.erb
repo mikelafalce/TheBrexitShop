@@ -1,39 +1,40 @@
-<div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
-  <button class="menu-icon" type="button" data-toggle="example-menu"></button>
-  <div class="title-bar-title">Menu</div>
-</div>
-
-<div class="top-bar" id="example-menu">
-  <div class="top-bar-left">
-    <ul class="dropdown menu" data-dropdown-menu>
-      <li class="menu-text"><a href="/">Site Title</a></li>
-      <li>
-        <a href="#">View Products</a>
-        <ul class="menu vertical">
-          <li><a href="#">All</a></li>
-          <li><a href="#">By Category</a></li>
-        </ul>
-        <div class="right-items">
-          <% if user_signed_in? %>
-            <li><%= link_to current_user.username, user_path(current_user) %></li>
-            <li><%= link_to 'Sign Out', sessions_path, method: :delete %></li>
-            <li>
-                <%= link_to cart_path do%>
-                <i class="fi-shopping-cart"></i>
-                My Cart
-                (<span class="cart-count"><%=current_user.cart_count%></span>)
-                <%end%>
-            </li>
-          <% else %>
-            <li><%= link_to 'Sign Up', new_user_path %></li>
-            <li><%= link_to 'Login', new_session_path %></li>
-          <% end %>
-          <%= form_tag(products_path, :method => "get", id: "search-form") do %>
-            <%= text_field_tag :search, params[:search], placeholder: "Search Products" %>
-            <%= submit_tag "Search", :name => nil %>
-          <% end %>
+  <div class="top-bar columns">
+    <div class="top-bar-title">
+      <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
+        <button class="menu-icon dark" type="button" data-toggle></button>
+      </span>
+      <a href="/"><%= image_tag("logo.svg") %></a>
+    </div>
+    <div id="responsive-menu">
+      <div class="top-bar-left">
+        <div class="treats m-item">
+          <li><a href="#"><%= image_tag("teapot.svg") %></a></li>
+          <a href="#"><p>treats</p></a>
         </div>
-      </li>
-    </ul>
+        <div class="toys m-item">
+          <li><a href="#"><%= image_tag("toyhorse.svg") %></a></li>
+          <a href="#"><p>toys</p></a>
+        </div>
+        <div class="apparel m-item">
+          <li><a href="#"><%= image_tag("apparel.svg") %></a></li>
+          <a href="#"><p>apparel</p></a>
+        </div>
+        <div class="accessories m-item">
+          <li><a href="#"><%= image_tag("accessories.svg") %></a></li>
+          <a href="#"><p>accessories</p></a>
+        </div>
+        <div class="books m-item">
+          <li><a href="#"><%= image_tag("book.svg") %></a></li>
+          <a href="#"><p>books</p></a>
+        </div>
+        <div class="bobs m-item">
+          <li><a href="#"><%= image_tag("bobs.svg") %></a></li>
+          <a href="#"><p>bits n' bobs</p></a>
+        </div>
+        <%#= form_tag(products_path, :method => "get", id: "search-form") do %>
+          <%#= text_field_tag :search, params[:search], placeholder: "search products" %>
+          <%# end %>
+      </div>
+    </div>
   </div>
-</div>
+  <div class="nav-border"></div>
