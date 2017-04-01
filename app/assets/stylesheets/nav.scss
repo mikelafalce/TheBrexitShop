@@ -1,0 +1,177 @@
+$red: #ED474A;
+$offwhite: #F3F2F1;
+$darkblue: #0B132B;
+$regular: 400;
+
+/** MOBILE **/
+.desktop-user-row {
+  display: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+li img {
+  margin-top: 0px;
+  margin-right: 0px;
+  padding-bottom: 12px;
+}
+
+.menu {
+  display: none;
+}
+
+.mobile-logo {
+  width: 87%;
+  height: auto;
+  margin-bottom: 1em;
+  padding-top: 2.5em;
+  padding-left: 3em;
+}
+
+.mobile-menu-row {
+  justify-content: center;
+}
+
+/* Shopping cart & User signed in */
+.shipping-info {
+  display: none;
+}
+
+.mobile-shipping-info {
+  margin: 0;
+  background-color: $red;
+}
+
+.m-shipping-info-content > p {
+  text-align: center;
+  padding-top: 9px;
+  color: $offwhite;
+  font-weight: bold;
+  height: auto;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .mobile-shipping-info {
+    display: none;
+  }
+
+  .shipping-info {
+    margin: 0;
+    display: initial;
+  }
+
+  .shipping-info-content {
+    background-color: $red;
+  }
+
+  .shipping-info-content > p {
+    text-align: center;
+    padding-top: 9px;
+    color: $offwhite;
+    font-weight: bold;
+    height: auto;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+
+  .desktop-user-row {
+    display: initial;
+  }
+
+  .user-signed-in {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-top: 0.5rem;
+      li {
+        margin-right: 5px;
+      }
+  }
+
+  .user-info {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .shopping {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .mobile-menu-row {
+    display: none;
+  }
+
+  .mobile-border-row {
+    display: none;
+  }
+
+  .menu {
+    display: initial;
+  }
+
+  .logo {
+    padding-left: 22em;
+  }
+
+  .menu-row {
+    justify-content: center;
+  }
+
+  .menu-items {
+    display: flex;
+    text-align: center;
+    padding-left: 3em;
+  }
+
+  .m-item {
+    text-align: center;
+    padding-top: 19px;
+    padding-right: 66px;
+      p {
+        margin-bottom: 0;
+      }
+  }
+
+  .nav-border {
+    background-color: $darkblue;
+    float: right;
+    height: 1px;
+    margin-top: -2em;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .logo {
+    padding-left: 0;
+  }
+
+  .menu {
+    display: inline-flex;
+    background-color: #fff;
+    padding-top: 1em;
+  }
+
+  .menu-items {
+    padding-left: 5em;
+  }
+
+  .border-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 0;
+  }
+
+  .nav-border {
+    text-align: right;
+    float: right;
+    margin-top: -4em;
+    width: 72%;
+  }
+}

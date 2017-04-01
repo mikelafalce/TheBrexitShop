@@ -20,5 +20,15 @@
   <%= @user.email %>
 </p>
 
+<p>Purchases:</p>
+<% @user.purchases.each do |p| %>
+  <div class="order">
+    <%= p.id %>
+    <%= p.product.title %>
+    <%= p.product.price %>
+    <%= p.created_at %>
+  </div>
+<% end %>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

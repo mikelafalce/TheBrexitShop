@@ -30,7 +30,7 @@ class TransactionsController < ApplicationController
     if @result.success?
       current_user.update(braintree_customer_id: @result.transaction.customer_details.id) unless current_user.has_payment_info?
       current_user.purchase_cart_products!
-      redirect_to root_url, notice: "Congraulations! Your order is on its way!"
+      redirect_to root_url, notice: "Congratulations! Your order is on its way!"
     else
       flash[:alert] = "Something went wrong while processing your transaction. Please try again!"
       gon.client_token = generate_client_token

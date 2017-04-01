@@ -1,39 +1,84 @@
-<div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
-  <button class="menu-icon" type="button" data-toggle="example-menu"></button>
-  <div class="title-bar-title">Menu</div>
+<!-- Shipping Info -->
+<div class="row shipping-info">
+  <div class="shipping-info-content columns">
+    <p>free shipping on all domestic and EU orders over £50 | no duties
+     applied to orders outside UK until they are*</p>
+   </div>
 </div>
 
-<div class="top-bar" id="example-menu">
-  <div class="top-bar-left">
-    <ul class="dropdown menu" data-dropdown-menu>
-      <li class="menu-text"><a href="/">Site Title</a></li>
-      <li>
-        <a href="#">View Products</a>
-        <ul class="menu vertical">
-          <li><a href="#">All</a></li>
-          <li><a href="#">By Category</a></li>
-        </ul>
-        <div class="right-items">
-          <% if user_signed_in? %>
-            <li><%= link_to current_user.username, user_path(current_user) %></li>
-            <li><%= link_to 'Sign Out', sessions_path, method: :delete %></li>
-            <li>
-                <%= link_to cart_path do%>
-                <i class="fi-shopping-cart"></i>
-                My Cart
-                (<span class="cart-count"><%=current_user.cart_count%></span>)
-                <%end%>
-            </li>
-          <% else %>
-            <li><%= link_to 'Sign Up', new_user_path %></li>
-            <li><%= link_to 'Login', new_session_path %></li>
-          <% end %>
-          <%= form_tag(products_path, :method => "get", id: "search-form") do %>
-            <%= text_field_tag :search, params[:search], placeholder: "Search Products" %>
-            <%= submit_tag "Search", :name => nil %>
-          <% end %>
-        </div>
-      </li>
-    </ul>
+<div class="row mobile-shipping-info">
+  <div class="m-shipping-info-content columns">
+    <p>free shipping on all domestic and EU orders over £50*</p>
   </div>
 </div>
+<!-- Shipping Info Ends -->
+
+<!-- Desktop: User Signed In (Mobile version incorporated into mobile nav) -->
+<div class="row desktop-user-row">
+  <div class="user-signed-in columns">
+    <% if user_signed_in? %>
+     <div class="user-info">
+       <li><%= link_to current_user.username, user_path(current_user) %> | </li>
+       <li><%= link_to 'sign out', sessions_path, method: :delete %></li>
+     </div>
+     <div class="shopping">
+       <li><%= link_to cart_path do%>
+       <%= image_tag("cart.svg") %>
+       (<span class="cart-count"><%=current_user.cart_count%></span>)
+       <%end%>
+     </div>
+     <div class="user-info">
+       <% else %>
+         <li><%= link_to 'sign up', new_user_path %> | </li>
+         <li> <%= link_to 'login', new_session_path %></li>
+       <% end %>
+     </div>
+  </div>
+</div>
+<!-- User Signed In Ends-->
+
+<!-- Desktop Nav -->
+<div class="row menu-row">
+  <ul class="menu">
+    <a href="/"><%= image_tag("logo.svg", class: "logo") %></a>
+    <div class="menu-items">
+      <div class="treats m-item">
+        <li><a href="#"><%= image_tag("teapot.svg") %></a></li>
+        <a href="#"><p>treats</p></a>
+      </div>
+      <div class="toys m-item">
+        <li><a href="#"><%= image_tag("toyhorse.svg") %></a></li>
+        <a href="#"><p>toys</p></a>
+      </div>
+      <div class="apparel m-item">
+        <li><a href="#"><%= image_tag("apparel.svg") %></a></li>
+        <a href="#"><p>apparel</p></a>
+      </div>
+      <div class="accessories m-item">
+        <li><a href="#"><%= image_tag("accessories.svg") %></a></li>
+        <a href="#"><p>accessories</p></a>
+      </div>
+      <div class="books m-item">
+        <li><a href="#"><%= image_tag("book.svg") %></a></li>
+        <a href="#"><p>books</p></a>
+      </div>
+      <div class="bobs m-item">
+        <li><a href="#"><%= image_tag("bobs.svg") %></a></li>
+        <a href="#"><p>bits n' bobs</p></a>
+      </div>
+    </div>
+  </ul>
+</div>
+<div class="row border-row">
+  <div class="nav-border"></div>
+</div>
+<!-- Desktop Nav Ends -->
+
+<!-- Mobile Nav -->
+<div class="row mobile-menu-row">
+  <a href="/"><%= image_tag("logo.svg", class: "mobile-logo logo") %></a>
+  <ul class="mobile-menu">
+
+  </ul>
+</div>
+<!-- Mobile Nav Ends-->
