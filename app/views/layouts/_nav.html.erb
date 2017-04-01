@@ -28,10 +28,10 @@
        <%end%>
      </div>
      <div class="user-info">
-       <% else %>
-         <li><%= link_to 'sign up', new_user_path %> | </li>
-         <li> <%= link_to 'login', new_session_path %></li>
-       <% end %>
+     <% else %>
+       <li><%= link_to 'sign up', new_user_path %> | </li>
+       <li> <%= link_to 'login', new_session_path %></li>
+     <% end %>
      </div>
   </div>
 </div>
@@ -77,8 +77,36 @@
 <!-- Mobile Nav -->
 <div class="row mobile-menu-row">
   <a href="/"><%= image_tag("logo.svg", class: "mobile-logo logo") %></a>
-  <ul class="mobile-menu">
-
-  </ul>
+  <input type="checkbox" id="nav" class="hidden"/>
+  <label for="nav" class="nav-open"><i></i><i></i><i></i></label>
+  <div class="nav-container">
+    <div class="nav-items">
+      <ul>
+        <li><%= form_tag(products_path, :method => "get", id: "search-form") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "search products" %>
+        <% end %></li>
+        <li><a href="#">treats</a></li>
+        <li><a href="#">toys</a></li>
+        <li><a href="#">apparel</a></li>
+        <li><a href="#">accessories</a></li>
+        <li><a href="#">books</a></li>
+        <li><a href="#">bits n' bobs</a></li>
+        <div class="user-contents">
+          <% if user_signed_in? %>
+             <li><%= link_to 'my account', user_path(current_user) %></li>
+             <li><%= link_to 'sign out', sessions_path, method: :delete %></li>
+             <li><%= link_to cart_path do%>
+               <%= image_tag("cart.svg") %>
+               (<span class="cart-count"><%=current_user.cart_count%></span>)</li>
+            <%end%>
+           <% else %>
+             <li>
+               <%= link_to 'sign up', new_user_path %><%= link_to 'login', new_session_path %>
+             </li>
+           <% end %>
+         </div>
+      </ul>
+    </div>
+  </div>
 </div>
 <!-- Mobile Nav Ends-->
