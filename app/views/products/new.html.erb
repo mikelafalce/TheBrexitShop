@@ -1,9 +1,68 @@
-<div class="row">
-  <div class="small-12 large-8 large-offset-2 columns">
-    <h1>New Product</h1>
+<div class="row new-product-form">
+  <div class="small-12 medium-10 medium-offset-1 large-8 large-offset-2 columns">
+    <h6>New Product</h6>
 
-    <%= render 'form', product: @product %>
+    <%= form_for(@product) do |f| %>
+      <% if @product.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+          <ul>
+          <% @product.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-    <%= link_to 'Back', products_path %>
+      <div class="row">
+        <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+          <div class="field">
+            <%= f.text_field :title, placeholder: 'title' %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+          <div class="field">
+            <%= f.file_field :image %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+          <div class="field">
+            <%= f.text_area :description, placeholder: 'description' %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+          <div class="field">
+            <%= f.text_area :details, placeholder: 'details' %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+          <div class="field">
+            <%= f.collection_select :category_id, Category.all, :id, :name, prompt: true, selected: true %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+          <div class="field">
+            <%= f.number_field :price, placeholder: 'price' %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+          <div class="actions">
+            <%= f.submit class: "button" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

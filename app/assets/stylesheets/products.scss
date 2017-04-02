@@ -1,0 +1,24 @@
+/* New Product Form */
+
+input#product_title,
+textarea#product_description,
+textarea#product_details,
+input#product_price,
+select#product_category_id {
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+input#product_image {
+  font-family: 'Raleway', 'Verdana', sans-serif;
+}
+
+.new-product-form {
+  margin-top: 3.5em;
+  margin-bottom: 9em;
+}
+
+.edit-product-form {
+  margin-top: 3.5em;
+  margin-bottom: 11em;
+}

@@ -83,7 +83,7 @@
     <div class="nav-items">
       <ul>
         <li><%= form_tag(products_path, :method => "get", id: "search-form") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "search products" %>
+          <%= text_field_tag :search, params[:search], placeholder: "search" %>
         <% end %><i class="fa fa-search fa-lg" aria-hidden="true"></i></li>
         <li><a href="#">treats</a></li>
         <li><a href="#">toys</a></li>

@@ -11,6 +11,7 @@ class Product < ApplicationRecord
 
   validates :title, presence: true, uniqueness: { case_sensitive: false }
   validates :description, presence: true, length: { minimum: 5 }
+  validates :details, presence: true
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 0 }
 
   def cart_action(current_user_id)

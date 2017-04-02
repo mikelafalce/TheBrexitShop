@@ -10,33 +10,59 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  <div class="row">
+    <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+      <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+  <div class="row">
+    <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+      <div class="field">
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+  <div class="row">
+    <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+      <div class="field">
+        <%= f.label :description %>
+        <%= f.text_area :description %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :category %>
-    <%= f.collection_select :category_id, Category.all, :id, :name, prompt: true, selected: true %>
+  <div class="row">
+    <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+      <div class="field">
+        <%= f.label :details %>
+        <%= f.text_area :details %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :price %>
-    <%= f.text_field :price %>
+  <div class="row">
+    <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+      <div class="field">
+        <%= f.label :category %>
+        <%= f.collection_select :category_id, Category.all, :id, :name, prompt: true, selected: true %>
+      </div>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit %>
+  <div class="row">
+    <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+      <div class="field">
+        <%= f.label :price %>
+        <%= f.text_field :price %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+      <div class="actions">
+        <%= f.submit class: 'button' %>
+      </div>
+    </div>
   </div>
 <% end %>
