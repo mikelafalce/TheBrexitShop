@@ -27,6 +27,12 @@ h6 {
     }
 }
 
+/* Edit User Form */
+.edit-user-form {
+  margin-top: 3.5em;
+  margin-bottom: 1em;
+}
+
 /* Login */
 .login-form {
   margin-top: 3.5em;
@@ -39,13 +45,21 @@ input#password {
 }
 
 @media only screen and (min-width: 768px) {
-  .new-user-form {
+  .new-user-form{
     margin-bottom: 10em;
+  }
+
+  .edit-user-form {
+    margin-bottom: 8em;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  .new-user-form {
+  .new-user-form{
     margin-bottom: 4.25em;
+  }
+
+  .edit-user-form {
+    margin-bottom: 2em;
   }
 }

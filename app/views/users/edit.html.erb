@@ -1,42 +1,57 @@
-<h1>Edit Account</h1>
+<div class="row edit-user-form">
+  <div class="small-12 medium-10 medium-offset-1 large-8 large-offset-2 columns">
+    <h6>Edit Account</h6>
 
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <%= form_for(@user) do |f| %>
+        <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+            <ul>
+            <% user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="row">
+          <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+            <div class="field">
+              <%= f.label :username %>
+              <%= f.text_field :username %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-5 small-offset-1 medium-4 medium-offset-2 columns">
+            <div class="field">
+              <%= f.label :first_name %>
+              <%= f.text_field :first_name %>
+            </div>
+          </div>
+          <div class="small-5 medium-4 columns">
+            <div class="field">
+              <%= f.label :last_name %>
+              <%= f.text_field :last_name %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+            <div class="field">
+              <%= f.label :email %>
+              <%= f.text_field :email %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-offset-1 medium-offset-2 columns">
+            <div class="actions">
+              <%= f.submit class: 'button' %>
+            </div>
+          </div>
+        </div>
       <% end %>
-      </ul>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
   </div>
-
-  <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
