@@ -27,6 +27,17 @@ h6 {
     }
 }
 
+/* Login */
+.login-form {
+  margin-top: 3.5em;
+}
+
+input#email,
+input#password {
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
 @media only screen and (min-width: 768px) {
   .new-user-form {
     margin-bottom: 10em;
