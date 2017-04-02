@@ -10,38 +10,55 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
+  <div class="row">
+    <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+      <div class="field">
+        <%= f.label :username %>
+        <%= f.text_field :username %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+  <div class="row">
+    <div class="small-5 small-offset-1 medium-4 medium-offset-2 columns">
+      <div class="field">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+      </div>
+    </div>
+    <div class="small-5 medium-4 columns">
+      <div class="field">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
+  <div class="row">
+    <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+  <div class="row">
+    <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+      <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+  <div class="row">
+    <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+      <div class="field">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
+  <div class="row">
+    <div class="small-offset-1 medium-offset-2 columns">
+      <%= f.submit class: "button" %>
+    </div>
   </div>
 <% end %>

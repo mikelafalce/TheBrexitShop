@@ -1,0 +1,40 @@
+input#user_username,
+input#user_first_name,
+input#user_last_name,
+input#user_email,
+input#user_password,
+input#user_password_confirmation {
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+h6 {
+  text-align: center;
+}
+
+/* New User */
+.new-user-form {
+  margin-top: 3.5em;
+  margin-bottom: 3.5em;
+}
+
+.button {
+  font-family: 'Raleway', 'Verdana', sans-serif;
+  border-radius: 8px;
+  background-color: $lightblue;
+    &:hover {
+      background-color: lighten($lightblue, 10%);
+    }
+}
+
+@media only screen and (min-width: 768px) {
+  .new-user-form {
+    margin-bottom: 10em;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .new-user-form {
+    margin-bottom: 4.25em;
+  }
+}

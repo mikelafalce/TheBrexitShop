@@ -1,19 +1,24 @@
-<div class="row">
+<div class="row login-form">
   <div class="small-12 large-8 large-offset-2 columns">
-    <h2>Login</h2>
+    <h6>Login</h6>
       <%= form_tag sessions_path do %>
-        <div>
+      <div class="row">
+        <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
           <%= label_tag :email %>
           <%= email_field_tag :email %>
         </div>
-        <div>
+      </div>
+      <div class="row">
+        <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
           <%= label_tag :password %>
           <%= password_field_tag :password %>
         </div>
-        <div class="submit-button">
+      </div>
+      <div class="row">
+        <div class="small-offset-1 medium-offset-2 columns">
           <%= submit_tag 'Sign In', class: "button" %>
         </div>
+      </div>
       <% end %>
     </div>
-    <%= link_to 'Back', sessions_path %>
 </div>

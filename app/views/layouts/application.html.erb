@@ -19,7 +19,12 @@
 
     <%= render "layouts/nav" %>
 
-    <%= yield %>
+    <%= notice || alert %>
+    
+    <div class="container">
+      <%= yield %>
+    </div>
+
 
   </body>
 </html>
