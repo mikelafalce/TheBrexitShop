@@ -39,6 +39,7 @@ gem "hiredis", "~> 0.6.0"
 gem "redis", ">= 3.2.0", :require => ["redis", "redis/connection/hiredis"]
 
 gem 'foundation-rails'
+gem 'font-awesome-sass', '~> 4.7.0'
 
 gem 'braintree'
 gem 'figaro'

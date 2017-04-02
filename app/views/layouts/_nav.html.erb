@@ -17,8 +17,8 @@
 <div class="row desktop-user-row">
   <div class="user-signed-in columns">
     <% if user_signed_in? %>
-     <div class="user-info">
-       <li><%= link_to current_user.username, user_path(current_user) %> | </li>
+     <div class="user-info columns">
+       <li><%= link_to 'account', user_path(current_user) %> | </li>
        <li><%= link_to 'sign out', sessions_path, method: :delete %></li>
      </div>
      <div class="shopping">
@@ -84,7 +84,7 @@
       <ul>
         <li><%= form_tag(products_path, :method => "get", id: "search-form") do %>
           <%= text_field_tag :search, params[:search], placeholder: "search products" %>
-        <% end %></li>
+        <% end %><i class="fa fa-search fa-lg" aria-hidden="true"></i></li>
         <li><a href="#">treats</a></li>
         <li><a href="#">toys</a></li>
         <li><a href="#">apparel</a></li>
@@ -93,15 +93,15 @@
         <li><a href="#">bits n' bobs</a></li>
         <div class="user-contents">
           <% if user_signed_in? %>
-             <li><%= link_to 'my account', user_path(current_user) %></li>
+             <li><%= link_to 'account', user_path(current_user) %></li>
              <li><%= link_to 'sign out', sessions_path, method: :delete %></li>
              <li><%= link_to cart_path do%>
-               <%= image_tag("whitecart.svg") %>
+               <%= image_tag("whitecart.svg", class: "mobile-cart") %>
                (<span class="cart-count"><%=current_user.cart_count%></span>)</li>
             <%end%>
            <% else %>
-             <li>
-               <%= link_to 'sign up', new_user_path %><%= link_to 'login', new_session_path %>
+             <li><%= link_to 'sign up', new_user_path %></li>
+             <li><%= link_to 'login', new_session_path %></li>
              </li>
            <% end %>
          </div>
