@@ -5,16 +5,7 @@
   <%= @product.title %>
 </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @product.image.url if @product.image.present? %>
-</p>
-
-<%# <div class="new"> %>
-  <div class="star-rating" data-score= <%= @avg_review %>></div>
-  <em><%= pluralize @reviews.count, 'review' %>
-  <em><%#= "#{@reviews.length} reviews" %></em>
-<%# </div> %>
+<%= image_tag @product.image.url(:single_display) if @product.image.present? %>
 
 <p>
   <strong>Description:</strong>
@@ -34,66 +25,8 @@
     <%= link_to 'Edit', edit_product_path(@product) %> |
   <% end %>
   <% if user_signed_in?%>
-    <%= link_to "", class: "button", data: {target: @cart_action, addUrl: add_to_cart_path(@product), removeUrl: remove_from_cart_path(@product)} do%>
-    <i class="fi-shopping-cart"></i>
-    <span><%=@cart_action%></span> Cart
+      <%= link_to "", class: "button", data: {target: @cart_action, addUrl: add_to_cart_path(@product), removeUrl: remove_from_cart_path(@product)} do%>
+      <i class="fi-shopping-cart"></i>
+      <span><%=@cart_action%></span> Cart
+      <%end%>
   <%end%>
-  <%end%>
-<%#= link_to 'Back', products_path %>
-<hr>
-<%= form_for([@product, @review]) do |f| %>
-  <% if @review.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
-
-      <ul>
-      <% @review.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <%# Form %>
-  <div class="field">
-    <%= f.label :rating %>
-    <div id="star-rating"></div>
-  </div>
-  <div class="field">
-    <%= f.label :comment %>
-    <%= f.text_area :comment %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-
-<hr>
-<% if @reviews.blank? %>
-  <h3>No reviews just yet, click here to add yours</h3>
-<% else %>
-  <h3>Reviews</h3>
-    <% @reviews.each do |review| %>
-    <div class="reviews">
-    <div class="star-rating" data-score= <%= review.rating %>></div>
-        <p><%= review.user.username %>:</p>
-        <p><%= review.comment %></p>
-    </div>
-    <hr>
-    <% end %>
-<% end %>
-
-<script>
-  $('.star-rating').raty({
-    path: '/assets/',
-    readOnly: true,
-    score: function() {
-      return $(this).attr('data-score');
-    }
-  });
-
-  $('#star-rating').raty({
-    path: '/assets/',
-    scoreName: 'review[rating]'
-  });
-</script>
