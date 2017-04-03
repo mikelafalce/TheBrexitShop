@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
-  resources :reviews
   get 'transactions/new'
 
   get 'carts/show'
@@ -10,6 +9,8 @@ Rails.application.routes.draw do
   root 'products#index'
 
   resources :users
+
+  resources :password_resets, only: [:new, :create, :edit, :update]
 
   resources :products do
     collection do
@@ -32,6 +33,8 @@ Rails.application.routes.draw do
     put 'add/:product_id', to: 'carts#add', as: :add_to
     put 'remove/:product_id', to: 'carts#remove', as: :remove_from
   end
+
+  # resources :reviews
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

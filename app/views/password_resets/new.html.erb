@@ -1,0 +1,27 @@
+
+<div class="row reset-password-form">
+  <div class="small-12 medium-10 medium-offset-1 large-8 large-offset-2 columns">
+    <%= alert %>
+    <h6>Forgot your password?</h6>
+    <div class="row">
+      <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+        <div class="forgot-message">
+          <p>Please enter your email address below.</p>
+          <p>You will receive a link to reset your password.</p>
+        </div>
+      </div>
+    </div>
+    <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+      <div class="row">
+        <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+          <%= f.email_field :email, placeholder: 'email' %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+          <%= f.submit "Submit", class: "button" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
