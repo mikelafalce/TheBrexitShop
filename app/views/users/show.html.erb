@@ -1,34 +1,32 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
-
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>Purchases:</p>
-<% @user.purchases.each do |p| %>
-  <div class="order">
-    <%= p.id %>
-    <%= p.product.title %>
-    <%= p.product.price %>
-    <%= p.created_at %>
+<div class="row ">
+  <div class="small-12 medium-10 medium-offset-1 large-8 large-offset-3 columns">
+    <div class="account-show">
+      <div class="account-info large-5 large-offset-1 columns">
+        <div class="username">
+          <p><strong>Username:</strong> <%= @user.username %></p>
+        </div>
+        <div class="first-name">
+          <p><strong>First name:</strong> <%= @user.first_name %></p>
+        </div>
+        <div class="last-name">
+          <p><strong>Last name:</strong> <%= @user.last_name %></p>
+        </div>
+        <div class="email">
+          <p><strong>Email:</strong> <%= @user.email %></p>
+        </div>
+        <%= link_to 'Edit', edit_user_path(@user) %>
+      </div>
+      <div class="order-history large-7 columns">
+        <h6>purchase history</h6>
+        <% @user.purchases.each do |p| %>
+          <div class="order">
+            order #:<%= p.id %> |
+            <%= p.product.title %> -
+            <%= quid(p.product.price) %> -
+            <%= p.created_at.strftime("%m, %d %Y") %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-<% end %>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+</div>

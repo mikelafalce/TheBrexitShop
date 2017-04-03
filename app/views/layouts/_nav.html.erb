@@ -86,11 +86,11 @@
           <%= text_field_tag :search, params[:search], placeholder: "search" %>
         <% end %><i class="fa fa-search fa-lg" aria-hidden="true"></i></li>
         <li><a href="/categories/2">treats</a></li>
-        <li><a href="#">toys</a></li>
-        <li><a href="#">apparel</a></li>
-        <li><a href="#">accessories</a></li>
-        <li><a href="#">books</a></li>
-        <li><a href="#">bits n' bobs</a></li>
+        <li><a href="/categories/5">toys</a></li>
+        <li><a href="/categories/3">apparel</a></li>
+        <li><a href="/categories/4">accessories</a></li>
+        <li><a href="/categories/6">books</a></li>
+        <li><a href="/categories/1">bits n' bobs</a></li>
         <div class="user-contents">
           <% if user_signed_in? %>
              <li><%= link_to 'account', user_path(current_user) %></li>

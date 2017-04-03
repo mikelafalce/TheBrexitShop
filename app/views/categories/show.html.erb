@@ -1,13 +1,17 @@
 <p id="notice"><%= notice %></p>
-<div class="row new-user-form">
-  <div class="small-12 medium-10 medium-offset-1 large-10 large-offset-1 columns">
+<div class="row category-show">
+  <div class="small-12 small-offset-1 medium-10 medium-offset-1 large-10 large-offset-1 columns">
     <h6 class="product-category">Products under <%= @category.name %> </h6>
       <% if @products.blank? %>
         <p>No products found <p>
       <% else %>
-        <% @products.each do |p| %>
-          <li><%= p.title %></li>
-        <% end %>
+        <div class="row">
+          <% @products.each do |p| %>
+            <div class="product-n-category small-10 medium-6 large-4 columns">
+                <%= p.title %>
+            </div>
+          <% end %>
+        </div>
       <% end %>
   </div>
 </div>
