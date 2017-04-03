@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
 
   def show
     @product = Product.new
-    @prodcts = @category.products
+    @products = @category.products
   end
 
   def new

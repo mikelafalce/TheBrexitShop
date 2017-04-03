@@ -15,7 +15,7 @@ h6 {
 /* New User */
 .new-user-form {
   margin-top: 3.5em;
-  margin-bottom: 3.5em;
+  margin-bottom: 6em;
 }
 
 .button {
@@ -38,10 +38,18 @@ h6 {
   margin-top: 3.5em;
 }
 
+#error_explanation p {
+  margin-bottom: 0;
+}
+
 input#email,
 input#password {
   border-radius: 8px;
   font-size: 0.9rem;
+}
+
+.login-form-below p {
+  margin-bottom: 0;
 }
 
 @media only screen and (min-width: 768px) {
@@ -52,14 +60,22 @@ input#password {
   .edit-user-form {
     margin-bottom: 8em;
   }
+
+  .login-form-below {
+    margin-bottom: 3em;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
   .new-user-form{
-    margin-bottom: 4.25em;
+    margin-bottom: 7em;
   }
 
   .edit-user-form {
     margin-bottom: 2em;
+  }
+
+  .login-form-below {
+    margin-bottom: 0;
   }
 }
