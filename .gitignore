@@ -19,4 +19,5 @@
 # Ignore application configuration
 /config/application.yml
 
+# Don't include my secret things!
 /config/initializers/app_keys.rb
