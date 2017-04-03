@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
-  before_action :find_category, {only: [:show, :edit, :destroy, :update] }
-  before_action :find_product, only: [:show, :edit, :update, :destroy]
+  before_action :find_category, {only: [:show, :edit, :update, :destroy] }
+  # before_action :find_product, only: [:show, :edit, :update, :destroy]
   before_action(:authorize, {only: [:edit, :destroy, :update] })
 
   def index
@@ -49,9 +49,9 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
   end
 
-  def find_product
-    @product = Product.find params[:id]
-  end
+  # def find_product
+  #   @product = Product.find params[:id]
+  # end
 
   def category_params
     params.require(:category).permit(:name)

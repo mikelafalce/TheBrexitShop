@@ -47,20 +47,20 @@
         <a href="/categories/2"><p>treats</p></a>
       </div>
       <div class="toys m-item">
-        <li><a href="#"><%= image_tag("toyhorse.svg") %></a></li>
-        <a href="#"><p>toys</p></a>
+        <li><a href="/categories/5"><%= image_tag("toyhorse.svg") %></a></li>
+        <a href="/categories/5"><p>toys</p></a>
       </div>
       <div class="apparel m-item">
-        <li><a href="#"><%= image_tag("apparel.svg") %></a></li>
-        <a href="#"><p>apparel</p></a>
+        <li><a href="/categories/3"><%= image_tag("apparel.svg") %></a></li>
+        <a href="/categories/3"><p>apparel</p></a>
       </div>
       <div class="accessories m-item">
-        <li><a href="#"><%= image_tag("accessories.svg") %></a></li>
-        <a href="#"><p>accessories</p></a>
+        <li><a href="/categories/4"><%= image_tag("accessories.svg") %></a></li>
+        <a href="/categories/4"><p>accessories</p></a>
       </div>
       <div class="books m-item">
-        <li><a href="#"><%= image_tag("book.svg") %></a></li>
-        <a href="#"><p>books</p></a>
+        <li><a href="/categories/6"><%= image_tag("book.svg") %></a></li>
+        <a href="/categories/6"><p>books</p></a>
       </div>
       <div class="bobs m-item">
         <li><a href="/categories/1"><%= image_tag("bobs.svg") %></a></li>
@@ -85,7 +85,7 @@
         <li><%= form_tag(products_path, :method => "get", id: "search-form") do %>
           <%= text_field_tag :search, params[:search], placeholder: "search" %>
         <% end %><i class="fa fa-search fa-lg" aria-hidden="true"></i></li>
-        <li><a href="#">treats</a></li>
+        <li><a href="/categories/2">treats</a></li>
         <li><a href="#">toys</a></li>
         <li><a href="#">apparel</a></li>
         <li><a href="#">accessories</a></li>

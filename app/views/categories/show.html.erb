@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
-
-<h3> Products under <%= @category.name %> </h3>
-  <% if @products.blank? %>
-    <p>No products found <p>
-  <% else %>
-    <% Product.where(category_id: @category.id).each do |product| %>
-    <li> <%= product.title %> </li>
-    <% end %>
-  <% end %>
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<div class="row new-user-form">
+  <div class="small-12 medium-10 medium-offset-1 large-8 large-offset-2 columns">
+    <h5>Products under <%= @category.name %> </h5>
+      <% if @products.blank? %>
+        <p>No products found <p>
+      <% else %>
+        <% @products.each do |p| %>
+          <li><%= p.title %></li>
+        <% end %>
+      <% end %>
+  </div>
+</div>
