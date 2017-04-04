@@ -1,27 +1,45 @@
 <div class="row cart-summary">
-  <div id="mycart" class="small-12 medium-10 medium-offset-1 large-8 large-offset-3 columns">
-    <h6>My Cart</h6>
-    <p class="cart-message"> You currently have <span class="cart-count"><%= pluralize(current_user.cart_count, "product") %></span> in your cart.</p>
-
-  <% @cart_products.each do |product|%>
-  <div data-equalizer class="cart-product large-12 column">
-    <div class="column large-2" data-equalizer-watch>
-      <%=link_to product do %>
-        <%=image_tag product.image, class: "cart-product"%>
+  <div id="mycart" class="medium-10 medium-offset-1 large-10 large-offset-1 columns">
+    <div class="row">
+      <div class="large-10 large-offset-2 columns">
+        <h6>My Cart</h6>
+        <p class="cart-message"> You currently have <span class="cart-count"><%= pluralize(current_user.cart_count, "product") %></span> in your cart.</p>
+      </div>
+    </div>
+    <div class="row">
+      <% @cart_products.each do |product|%>
+      <div data-equalizer class="cart-product small-12 medium-12 large-10 large-offset-2 columns">
+        <div class="small-4 medium-4 large-4 columns" data-equalizer-watch>
+          <%=link_to product do %>
+            <%=image_tag product.image, class: "cart-product-img"%>
+          <%end%>
+        </div>
+        <div class="small-5 medium-4 large-4 columns text-center" data-equalizer-watch>
+            <p class="scale"> <%= product.title %> </p>
+        </div>
+        <div class="price-action small-3 medium-4 large-4 columns" data-equalizer-watch>
+          <%=link_to "" , data: {targetUrl: remove_from_cart_path(product)} do%>
+            <i class="fa fa-times-circle-o" aria-hidden="true"></i><p>Remove<p>
+          <%end%>
+          <p class="price"><%= quid(product.price) %></h6>
+        </div>
+      </div>
       <%end%>
     </div>
-    <div class="column large-8 text-center" data-equalizer-watch>
-        <p class="scale"> <%= product.title %> </p>
+    <div class="row cart-total">
+      <div class="small-12 medium-12 large-10 large-offset-2 columns">
+        <div class="small-4 medium-4 large-4 columns" data-equalizer-watch><p class="hidden-p">Hello</p></div>
+        <div class="small-5 medium-4 large-4 columns text-center" data-equalizer-watch>
+          <p class="your-order"><strong>Your Order Total</strong></p>
+        </div>
+        <div class="small-3 medium-4 large-4 columns">
+          <p class="scale total-money"><strong><%= quid(current_user.cart_total_price) %></strong></p>
+        </div>
+      </div>
     </div>
-    <div class="column large-2" data-equalizer-watch>
-      <%=link_to "" , data: {targetUrl: remove_from_cart_path(product)} do%>
-        <i class="fa fa-times-circle-o" aria-hidden="true"></i><p>Remove<p>
-      <%end%>
-      <h4 class="scale"><%= quid(product.price) %></h4>
-    </div>
+    <div class="row checkout">
+      <div class="large-10 large-offset-2 columns">
+        <%=link_to "Checkout", new_transaction_path, class: "button" unless current_user.get_cart_products.blank?%>
+      </div>
   </div>
-  <%end%>
-  <%= quid(current_user.cart_total_price) %>
-
-  <%=link_to "Checkout", new_transaction_path, class: "button" unless current_user.get_cart_products.blank?%>
 </div>
