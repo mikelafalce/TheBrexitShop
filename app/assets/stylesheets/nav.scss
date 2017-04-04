@@ -84,7 +84,7 @@ li img {
 .nav-container ul li a {
   align-items: flex-start;
   padding: 5px 20px;
-  color: #fff;
+  color: $darkblue;
   font-size: 26px;
   transform: scale(1.25);
   transition: all 0.3s ease;
@@ -186,7 +186,7 @@ li img {
 }
 
 #search[type='text'] {
-  color: #fff;
+  color: $darkblue;
 }
 
 .fa-search {
