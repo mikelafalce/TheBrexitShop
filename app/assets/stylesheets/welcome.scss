@@ -1,3 +1,55 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.featured-products {
+  margin-top: 2.25em;
+  margin-left: 1em;
+}
+
+.bonnet-title {
+  margin-top: 2.5em;
+}
+
+.denture-title {
+  margin-top: 0.75em;
+}
+
+.featured-product {
+  margin-top: 1em;
+  margin-bottom: 2em;
+  text-align: center;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.featured-products {
+  margin-bottom: 9em;
+}
+
+.featured-img {
+  max-width: 75%;
+}
+
+.dentures {
+  max-width: 60%;
+}
+
+.austen {
+  max-width: 57%;
+}
+
+@media only screen and (min-width: 768px) {
+  .featured-product {
+    border-bottom: none;
+  }
+
+  .featured-products {
+    margin-bottom: 8em;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .featured-products {
+    margin-left: 5em;
+    margin-bottom: 11em;
+  }
+}
