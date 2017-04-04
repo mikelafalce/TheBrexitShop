@@ -1,32 +1,38 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
-</p>
-
-<%= image_tag @product.image.url(:single_display) if @product.image.present? %>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @product.category.name %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= quid(@product.price) %>
-</p>
-  <% if user_signed_in? && can?(:manage, @product) %>
-    <%= link_to 'Edit', edit_product_path(@product) %> |
-  <% end %>
-  <% if user_signed_in?%>
-      <%= link_to "", class: "button", data: {target: @cart_action, addUrl: add_to_cart_path(@product), removeUrl: remove_from_cart_path(@product)} do%>
-      <i class="fi-shopping-cart"></i>
-      <span><%=@cart_action%></span> Cart
-      <%end%>
-  <%end%>
+<div class="row product-show">
+  <div class="small-12 small-offset-1 medium-10 medium-offset-1 large-10 large-offset-1 columns">
+    <div class="row">
+      <div class="product-photo small-10 medium-6 large-6 columns">
+        <%= image_tag @product.image.url(:single_display) if @product.image.present? %>
+      </div>
+      <div class="product-info small-10 medium-6 large-6 columns">
+        <h6 class="single-product"><%= @product.title %> </h6>
+        <p>
+          <strong>Price:</strong>
+          <%= quid(@product.price) %>
+        </p>
+        <p>
+          <strong>Category:</strong>
+          <%= @product.category.name %>
+        </p>
+        <p>
+          <strong>Description:</strong>
+          <%= @product.description %>
+        </p>
+        <p>
+          <strong>Care Instructions</strong>
+          <%= @product.details %>
+        </p>
+        <% if user_signed_in? && can?(:manage, @product) %>
+          <%= link_to 'Edit', edit_product_path(@product) %> |
+        <% end %>
+        <% if user_signed_in?%>
+            <%= link_to "", class: "button", data: {target: @cart_action, addUrl: add_to_cart_path(@product), removeUrl: remove_from_cart_path(@product)} do%>
+            <i class="fi-shopping-cart"></i>
+            <span><%=@cart_action%></span> Cart
+            <%end%>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>
