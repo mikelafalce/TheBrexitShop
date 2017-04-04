@@ -64,7 +64,7 @@ li img {
   height: 100%;
   width: 100%;
   z-index: 9900;
-  background: $lightblue;
+  background: #fff;
   transform: translateY(-100%);
   transition: all 0.2s ease;
     ul {
@@ -84,7 +84,7 @@ li img {
 .nav-container ul li a {
   align-items: flex-start;
   padding: 5px 20px;
-  color: $lightblue;
+  color: #fff;
   font-size: 26px;
   transform: scale(1.25);
   transition: all 0.3s ease;
@@ -130,7 +130,7 @@ li img {
 }
 
 #nav:checked + .nav-open i {
-  background: #fff;
+  background: $darkblue;
 }
 
 #nav:checked + .nav-open i:nth-child(1) {
@@ -154,7 +154,7 @@ li img {
 }
 
 #nav:checked ~ .nav-container ul li a {
-  color: #fff;
+  color: $darkblue;
   transform: scale(1);
     &:hover {
       color: lighten($lightblue, 20%);
@@ -175,8 +175,8 @@ li img {
 
 #search {
   margin-top: 2.5em;
-  background-color: $lightblue;
-  border-color: #fff;
+  background-color: #fff;
+  border-color: $lightblue;
   border-radius: 8px;
 }
 

@@ -52,8 +52,22 @@ input#product_image {
 }
 
 .product-n-category {
-  background-color: red;
-  border-right: 1px solid aquamarine;
+  text-align: center;
+  margin-bottom: 2em;
+    img {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      max-width: 75%;
+    }
+}
+
+.product-t-text {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.category-show {
+  margin-bottom: 9em;
 }
 
 /* Featured Products */
@@ -76,6 +90,12 @@ input#product_image {
   .product-info {
     padding-left: 3em;
   }
+
+  .category-show {
+    margin-top: 3.5em;
+    margin-bottom: 10em;
+  }
+
 }
 
 @media only screen and (min-width: 1024px) {
@@ -86,5 +106,10 @@ input#product_image {
 
   .product-info {
     padding-left: 3em;
+  }
+
+  .category-show {
+    margin-bottom: 11em;
+    margin-left: 4em;
   }
 }

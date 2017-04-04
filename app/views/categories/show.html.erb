@@ -8,7 +8,10 @@
         <div class="row">
           <% @products.each do |p| %>
             <div class="product-n-category small-10 medium-6 large-4 columns">
-                <%= link_to p.title, product_path(p)  %>
+                <%= image_tag p.image.url(:single_display) if p.image.present? %>
+                <p class="product-t-text"><%= p.title  %></p>
+                <p><%= quid(p.price) %></p>
+                <%= link_to 'View', product_path(p) %>
             </div>
           <% end %>
         </div>

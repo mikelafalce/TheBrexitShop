@@ -96,7 +96,7 @@
              <li><%= link_to 'account', user_path(current_user) %></li>
              <li><%= link_to 'sign out', sessions_path, method: :delete %></li>
              <li><%= link_to cart_path do%>
-               <%= image_tag("whitecart.svg", class: "mobile-cart") %>
+               <%= image_tag("cart.svg", class: "mobile-cart") %>
                (<span class="cart-count"><%=current_user.cart_count%></span>)</li>
             <%end%>
            <% else %>
