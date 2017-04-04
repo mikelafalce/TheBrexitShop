@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   get 'transactions/new'
 
   get 'carts/show'
