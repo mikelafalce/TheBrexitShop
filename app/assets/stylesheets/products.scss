@@ -77,7 +77,28 @@ input#product_image {
   margin-top: 1.5em;
 }
 
+/* Products Index */
+.indexed-product {
+  padding-bottom: 2.25em;
+  padding-top: 2.25em;
+  border-bottom: 1px solid #dcdcdc;
+  text-align: center;
+}
+
+.img-container {
+  text-align: center;
+}
+
 @media only screen and (min-width: 768px) {
+
+  .indexed-product {
+    text-align: left;
+  }
+
+  .index-photo {
+    max-width: 40%;
+  }
+
   .product-show {
     margin-top: 3.25em;
     margin-bottom: 10em;

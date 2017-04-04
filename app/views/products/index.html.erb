@@ -1,25 +1,39 @@
-<div class="row">
-  <div class="small-12 large-10 large-offset-1 columns">
+<div class="row products-index">
+  <div class="small-12 large-10 large-offset-1 columns wow fadeIn">
     <p id="notice"><%= notice %></p>
 
     <% if @products.blank? %>
       <h4>There are no products containing the term <%= params[:search] %>.</h4>
     <% end %>
 
-    <h1>Products</h1>
+    <div class="row i-product">
       <% @products.each do |product| %>
-          <%= product.title %>
-          <%= image_tag product.image.url(:list_display) if product.image.present? %>
-          <%= product.description %>
-          <%= quid(product.price) %>
-          <%= link_to 'Show', product %>
-            <% if user_signed_in? && can?(:manage, @product) %>
-            <%= link_to 'Edit', edit_product_path(product) %>
-            <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
-          <hr>
+        <div class="small-10 small-offset-1 medium-10 medium-offset-1 large-12 large-offset-0 columns indexed-product">
+          <div class="small-12 medium-4 large-4 columns img-container">
+            <%= image_tag product.image.url(:list_display), :class => "index-photo" if product.image.present? %>
+          </div>
+          <div class="small-12 medium-3 large-3 columns">
+            <p class="scale"><%= product.title %></p>
+          </div>
+          <div class="small-12 medium-3 large-3 columns">
+            <p class="scale"><%= quid(product.price) %></p>
+          </div>
+          <div class="small-12 medium-2 large-2 columns">
+            <%= link_to 'View', product_path(product) %>
+              <% if user_signed_in? && can?(:manage, @product) %>
+                <%= link_to 'Edit', edit_product_path(product) %>
+                <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %>
+          </div>
+        </div>
       <% end %>
-
-      <%= link_to 'New Product', new_product_path %>
+    </div>
   </div>
 </div>
+<div class="row">
+  <!-- <div class="small-12 large-10 large-offset-1 columns wow fadeIn"> -->
+    <%# if user_signed_in? && can?(:manage, @product) %>
+      <%#= link_to 'New Product', new_product_path %>
+    <%# end %>
+  <!-- </div>
+</div> -->
