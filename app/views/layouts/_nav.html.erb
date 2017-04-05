@@ -1,15 +1,19 @@
-<!-- Shipping Info -->
+<!-- Mobile Shipping Info -->
+<div class="row m-shipping-info">
+  <div class="m-shipping-info-content small-12 columns">
+    <div class="shipping-col col-2 small-12 columns">
+      <p>no duties on orders outside UK until there are*</p>
+    </div>
+  </div>
+</div>
+
+<!-- Desktop Shipping Info -->
 <div class="row shipping-info">
   <div class="shipping-info-content small-12 medium-12 large-12 columns">
-    <div class="shipping-col small-4 medium-4 large-4 columns">
-      <%= form_tag(products_path, :method => "get", id: "desk-search") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "search" %>
-      <% end %> <!--<i class="fa fa-search fa-lg fa-desk" aria-hidden="true"></i> -->
+    <div class="shipping-col col-2 small-4 medium-8 large-6 large-offset-3 columns">
+      <p>free shipping & no duties on orders outside UK until there are*</p>
     </div>
-    <div class="shipping-col-2 small-4 medium-4 large-4 columns">
-      <p>no duties applied to orders outside UK until they are*</p>
-    </div>
-    <div class="shipping-col small-4 medium-4 large-4 columns">
+    <div class="shipping-col small-4 medium-4 large-3 columns">
       <div class="user-signed-in columns">
         <% if user_signed_in? %>
          <div class="user-info columns">
@@ -18,9 +22,10 @@
          </div>
          <div class="shopping">
            <li><%= link_to cart_path do%>
-           <%= image_tag("cart.svg") %>
-           (<span class="cart-count"><%=current_user.cart_count%></span>)
-           <%end%>
+           <%= image_tag("smwcart.svg") %> <% end %></li>
+           <li>(<span class="cart-count"><%= link_to cart_path do %>
+             <%= current_user.cart_count%></span><% end %> )</li>
+
          </div>
          <div class="user-info">
          <% else %>
@@ -30,15 +35,9 @@
          </div>
       </div>
     </div>
-   </div>
+  </div>
 </div>
 <!-- Shipping Info Ends -->
-
-<!-- Desktop: User Signed In (Mobile version incorporated into mobile nav) -->
-<!-- <div class="row desktop-user-row">
-
-</div> -->
-<!-- User Signed In Ends-->
 
 <!-- Desktop Nav -->
 <div class="row menu-row">
