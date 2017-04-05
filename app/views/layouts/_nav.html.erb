@@ -25,7 +25,6 @@
            <%= image_tag("smwcart.svg") %> <% end %></li>
            <li>(<span class="cart-count"><%= link_to cart_path do %>
              <%= current_user.cart_count%></span><% end %> )</li>
-
          </div>
          <div class="user-info">
          <% else %>
@@ -38,6 +37,22 @@
   </div>
 </div>
 <!-- Shipping Info Ends -->
+
+<!-- Desktop Search Function -->
+<div class="row search-function">
+  <div class="small-12 medium-12 large-12 columns search-bar">
+    <!-- <div class="search-input large-6 large-offset-4 columns" data-equalizer-watch> -->
+      <%#= form_tag(products_path, :method => "get", id: "search-form") do %>
+        <%#= text_field_tag :search, params[:search], placeholder: "search" %>
+      <%# end %>
+    <!-- </div> -->
+    <!-- <div class="search-icon large-2 columns" data-equalizer-watch>
+      <i class="fa fa-search fa-lg" aria-hidden="true"></i>
+    </div> -->
+  </div>
+</div>
+
+<!-- Desktop Search Function Ends -->
 
 <!-- Desktop Nav -->
 <div class="row menu-row">

@@ -79,10 +79,25 @@ input#product_image {
   padding-top: 2.25em;
   border-bottom: 1px solid #dcdcdc;
   text-align: center;
+    &:last-child {
+      border-bottom: none;
+    }
 }
 
 .img-container {
   text-align: center;
+}
+
+.scale {
+  position: relative;
+  top: 35%;
+  transform: translateY(-35%);
+}
+
+.special-scale {
+  position: relative;
+  top: 32%;
+  transform: translateY(-32%);
 }
 
 @media only screen and (min-width: 768px) {
