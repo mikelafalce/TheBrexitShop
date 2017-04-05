@@ -1,7 +1,5 @@
 <div class="row products-index">
   <div class="small-12 large-10 large-offset-1 columns wow fadeIn">
-    <p id="notice"><%= notice %></p>
-
     <% if @products.blank? %>
       <h4>There are no products containing the term <%= params[:search] %>.</h4>
     <% end %>

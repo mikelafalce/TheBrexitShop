@@ -21,8 +21,11 @@
   <body>
 
     <%= render "layouts/nav" %>
+
     <div class="container">
+      <p id="notice"><%= notice %></p><p id="alert"><%= alert %></p>
       <%= yield %>
+
     </div>
 
     <!-- <script src="js/wow.min.js"></script> -->
