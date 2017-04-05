@@ -13,7 +13,10 @@ class CartsController < ApplicationController
 
   def remove
     $redis.srem current_user_cart, params[:product_id]
-    render json: current_user.cart_count, status: 200
+    render json: {
+      cart_count: current_user.cart_count,
+      cart_total: helpers.quid(current_user.cart_total_price)
+    }, status: 200
   end
 
   private

@@ -36,17 +36,11 @@ li img {
 }
 
 /* Shopping cart & User signed in */
-.shipping-info {
-  display: none;
-}
-
-.mobile-shipping-info {
-  margin: 0;
+.shipping-info-content {
   background-color: $red;
 }
 
-.m-shipping-info-content > p {
-  text-align: left;
+.shipping-col > p {
   padding-top: 9px;
   color: $offwhite;
   font-weight: bold;
@@ -189,6 +183,10 @@ li img {
   color: $darkblue;
 }
 
+#desk-search {
+  display: none;
+}
+
 .fa-search {
   margin-left: -2em;
   color: darken($offwhite, 20%);
@@ -196,27 +194,23 @@ li img {
 
 @media only screen and (min-width: 781px) {
 
-  .mobile-shipping-info {
-    display: none;
-  }
-
   .shipping-info {
     margin: 0;
     display: initial;
   }
 
-  .shipping-info-content {
-    background-color: $red;
+  #desk-search {
+    display: initial;
   }
 
-  .shipping-info-content > p {
-    text-align: center;
-    padding-top: 9px;
-    color: $offwhite;
-    font-weight: bold;
-    height: auto;
-    margin-bottom: 5px;
-    width: 100%;
+  input#search {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: $red;
+    border: 1px solid white;
+    font-color: $offwhite;
+    margin-left: -1.75em;
   }
 
   .desktop-user-row {

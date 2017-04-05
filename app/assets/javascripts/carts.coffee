@@ -16,13 +16,9 @@ $(window).load ->
 $(window).load ->
   $('#mycart .fa.fa-times-circle-o').click (e) ->
     e.preventDefault()
-    removePrice = $(this).parent().parent().children('p.price').text()
-    totalMoney = $('p.total-money').text()
-    newTotal = "£" + (totalMoney.slice(1) - removePrice.slice(1)) + ".00"
-
     $this = $(this).closest('a')
     url = $this.data('targeturl')
     $.ajax url: url, type: 'put', success: (data) ->
-      $('.cart-count').html(data)
+      $('.cart-count').html(data.cart_count)
+      $('p.total-money').html('<strong>' + data.cart_total + '</strong>')
       $this.closest('.cart-product').slideUp()
-      $('p.total-money').html('<strong>' + newTotal + '</strong>')
