@@ -207,6 +207,7 @@ li img {
 
 @media only screen and (min-width: 781px) {
 
+/* Shipping Info Bar */
   .m-shipping-info {
     display: none;
   }
@@ -223,7 +224,7 @@ li img {
       }
   }
 
-  /* SEARCH BAR */
+  /* Search Bar */
   .search-function {
     max-width: 100%;
     display: initial;
@@ -270,6 +271,7 @@ li img {
     width: 75%;
   }
 
+  /* User Signed In and Shopping Cart */
   .desktop-user-row {
     display: initial;
   }
@@ -320,6 +322,8 @@ li img {
     display: none;
   }
 
+  /* Menu */
+
   .menu {
     display: initial;
   }
@@ -333,10 +337,92 @@ li img {
     margin-top: 2em;
   }
 
+  .nav-border {
+    background-color: $darkblue;
+    float: right;
+    height: 1px;
+    margin-top: -2em;
+    width: 100%;
+  }
+
+  /* Menu Icons */
+
   .menu-items {
     display: flex;
     text-align: center;
     padding-left: 3em;
+  }
+
+  .d-menu-icon {
+    height: 50px;
+    width: 50px;
+  }
+
+  .treats-i {
+    background-image: url(image-path('teapot.svg'));
+    background-repeat: no-repeat;
+  }
+
+  .treats-steam {
+    background-image: url(image-path('teapot-st.svg'));
+    background-repeat: no-repeat;
+  }
+
+  .toys-i {
+    background-image: url(image-path('toyhorse.svg'));
+    background-repeat: no-repeat;
+  }
+
+  @keyframes rockingHorse {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-20deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(20deg);}
+    100% { transform: rotate(0deg);}
+  }
+
+  .rocking {
+    animation: 1.5s linear 0s infinite rockingHorse;
+  }
+
+  .bobs-i {
+    background-image: url(image-path('bobs.svg'));
+    background-repeat: no-repeat;
+  }
+
+  .bobs-o {
+    background-image: url(image-path('bobs-o.svg'));
+    background-repeat: no-repeat;
+  }
+
+  .books-i {
+    background-image: url(image-path('book.svg'));
+    background-repeat: no-repeat;
+  }
+
+  .books-o {
+    background-image: url(image-path('book-o.svg'));
+    background-repeat: no-repeat;
+  }
+
+  .accessories-i {
+    background-image: url(image-path('accessories.svg'));
+    background-repeat: no-repeat;
+  }
+
+  .accessories-o {
+    background-image: url(image-path('accessories-o.svg'));
+    background-repeat: no-repeat;
+  }
+
+  .apparel-i {
+    background-image: url(image-path('apparel.svg'));
+    background-repeat: no-repeat;
+  }
+
+  .apparel-o {
+    background-image: url(image-path('apparel-o.svg'));
+    background-repeat: no-repeat;
   }
 
   .m-item {
@@ -346,14 +432,6 @@ li img {
       p {
         margin-bottom: 0;
       }
-  }
-
-  .nav-border {
-    background-color: $darkblue;
-    float: right;
-    height: 1px;
-    margin-top: -2em;
-    width: 100%;
   }
 }
 
