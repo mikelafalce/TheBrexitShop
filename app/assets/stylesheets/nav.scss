@@ -231,6 +231,15 @@ li img {
   color: darken($offwhite, 20%);
 }
 
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
 @media only screen and (min-width: 800px) {
 
 /* Shipping Info Bar */
@@ -251,13 +260,33 @@ li img {
   }
 
   /* Search Bar */
+
+  #search {
+    margin-top: 0;
+  }
+
+  input#search {
+    border: none;
+    border-bottom: 1px solid $darkblue;
+    border-radius: 0;
+    height: 150%;
+    font-size: 1.25em;
+  }
+
+  #search[type='text'] {
+    box-shadow: none;
+    width: 100%;
+  }
+
   .search-function {
     max-width: 100%;
     display: initial;
   }
 
   .search-bar {
-    padding-right: 2.5em;
+    text-align: right;
+    margin-top: 1em;
+    padding-right: 3.5em;
   }
 
   .search-icon {
@@ -270,32 +299,55 @@ li img {
 
   .fa-search {
     margin-left: 0;
-  }
-
-  #desk-search {
-    display: initial;
-    margin-bottom: 0;
-  }
-
-  input#search {
-    margin-top: 0;
-    margin-bottom: 0;
-    border-radius: 8px;
-    height: 75%;
-    font-color: $darkblue;
-    border: 1px solid $red;
-    font-size: 0.80rem;
-    margin-left: -1.75em;
-      *:focus {
-        outline: none;
+    cursor: pointer;
+      &:hover {
+        color: $darkblue;
       }
   }
 
-  #search[type='text'] {
-    box-shadow: none;
-    color: $red;
-    width: 75%;
-  }
+  /* Search Overlay */
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 7em;
+    padding-right: 15em;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: $darkblue;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
 
   /* User Signed In and Shopping Cart */
   .desktop-user-row {
@@ -375,7 +427,7 @@ li img {
 
   .menu-row {
     justify-content: center;
-    margin-top: 2em;
+    margin-top: 1em;
   }
 
   .nav-border {

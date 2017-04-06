@@ -6,6 +6,7 @@
 
 .featured-imgs {
   justify-content: center;
+  margin-bottom: 8.5em;
 }
 
 @media only screen and (min-width: 768px) {
@@ -16,6 +17,7 @@
   .featured-products {
     margin-bottom: 8em;
   }
+
 }
 
 @media only screen and (min-width: 930px) {
@@ -26,6 +28,11 @@
 
   .slider-action {
     display: initial;
+    margin-bottom: 3em;
+  }
+
+  .da-slides {
+    margin-bottom: 12em;
   }
 
   #slider {
@@ -88,5 +95,9 @@
   .featured-products {
     margin-left: 5em;
     margin-bottom: 3em;
+  }
+
+  .da-slides {
+    margin-bottom: 12em;
   }
 }

@@ -2,7 +2,7 @@
 <div class="row m-shipping-info">
   <div class="m-shipping-info-content small-12 columns">
     <div class="shipping-col col-2 small-12 columns">
-      <p>no duties on orders outside UK until there are*</p>
+      <p>no duties on orders outside UK until there are</p>
     </div>
   </div>
 </div>
@@ -11,7 +11,7 @@
 <div class="row shipping-info">
   <div class="shipping-info-content small-12 medium-12 large-12 columns">
     <div class="shipping-col col-2 small-4 medium-8 large-5 large-offset-3 columns">
-      <p>free shipping & no duties on orders outside UK until there are*</p>
+      <p>free shipping & no duties on orders outside UK until there are</p>
     </div>
     <div class="shipping-col small-4 medium-4 large-4 columns">
       <div class="user-signed-in columns">
@@ -41,14 +41,15 @@
 <!-- Desktop Search Function -->
 <div class="row search-function">
   <div class="small-12 medium-12 large-12 columns search-bar">
-    <!-- <div class="search-input large-6 large-offset-4 columns" data-equalizer-watch> -->
-      <%#= form_tag(products_path, :method => "get", id: "search-form") do %>
-        <%#= text_field_tag :search, params[:search], placeholder: "search" %>
-      <%# end %>
-    <!-- </div> -->
-    <!-- <div class="search-icon large-2 columns" data-equalizer-watch>
-      <i class="fa fa-search fa-lg" aria-hidden="true"></i>
-    </div> -->
+      <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+          <a href="#"><%= form_tag(products_path, :method => "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Search the Shop..." %>
+          <% end %></a>
+        </div>
+      </div>
+    <span onclick="openNav()"><i class="fa fa-search fa-lg" aria-hidden="true"></i></span>
   </div>
 </div>
 
