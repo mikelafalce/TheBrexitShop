@@ -1,10 +1,64 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-.featured-products {
-  margin-top: 2.25em;
-  margin-left: 1em;
+/* SLIDER */
+$main: #E26A6A;
+$secondary: #ECF0F1;
+$slider: #1ABC9C;
+
+#slider {
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto 0 auto;
+  border-radius: 4px;
+  ul {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 200px;
+    list-style: none;
+    li {
+      position: relative;
+      display: block;
+      float: left;
+      margin: 0;
+      padding: 0;
+      width: 450px;
+      height: 300px;
+      background: $slider;
+      text-align: center;
+      line-height: 300px;
+    }
+  }
+
+  a.control_prev, a.control_next {
+    position: absolute;
+    top: 40%;
+    z-index: 999;
+    display: block;
+    padding: 2% 1.5%;
+    width: auto;
+    height: auto;
+    background: darken($slider, 15%);
+    color: $secondary;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    opacity: 0.3;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+      transition: all 0.2s ease;
+    }
+  }
+
+  a.control_prev {
+    border-radius: 0 5px 5px 0;
+  }
+
+  a.control_next {
+    right: 0;
+    border-radius: 5px 0 0 5px;
+  }
 }
+/* SLIDER ENDS */
 
 .bonnet-title {
   margin-top: 2.5em;

@@ -231,7 +231,7 @@ li img {
   color: darken($offwhite, 20%);
 }
 
-@media only screen and (min-width: 781px) {
+@media only screen and (min-width: 813px) {
 
 /* Shipping Info Bar */
   .m-shipping-info {
@@ -441,6 +441,7 @@ li img {
   .bobs-i {
     background-image: url(image-path('bobs.svg'));
     background-repeat: no-repeat;
+    margin-left: 0.5em;
   }
 
   .bobs-o {
@@ -461,6 +462,7 @@ li img {
   .accessories-i {
     background-image: url(image-path('accessories.svg'));
     background-repeat: no-repeat;
+    margin-left: 0.5em;
   }
 
   .accessories-o {
