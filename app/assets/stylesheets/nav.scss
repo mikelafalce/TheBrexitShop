@@ -68,11 +68,17 @@ li img {
   width: 100%;
   z-index: 9900;
   background: #fff;
+  -ms-transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
+  -ms-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
     ul {
       position: absolute;
       top: 50%;
+      -ms-transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
       transform: translateY(-50%);
       width: 100%;
         li {
@@ -89,7 +95,11 @@ li img {
   padding: 5px 20px;
   color: $darkblue;
   font-size: 26px;
+  -ms-transform: scale(1.25);
+  -webkit-transform: scale(1.25);
   transform: scale(1.25);
+  -ms-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -119,16 +129,22 @@ li img {
 
 .nav-open i:nth-child(1) {
   margin-top: 20px;
+  -ms-transition: transform 0.4s ease;
+  -webkit-transition: transform 0.4s ease;
   transition: transform 0.4s ease;
 }
 
 .nav-open i:nth-child(2) {
   margin-top: 4px;
+  -ms-transition: transform 0.4s ease;
+  -webkit-transition: transform 0.4s ease;
   transition: transform 0.4s ease;
 }
 
 .nav-open i:nth-child(3) {
   margin-top: 4px;
+  -ms-transition: transform 0.4s ease;
+  -webkit-transition: transform 0.4s ease;
   transition: transform 0.4s ease;
 }
 
@@ -137,18 +153,26 @@ li img {
 }
 
 #nav:checked + .nav-open i:nth-child(1) {
+  -ms-transform: rotate(45deg) translate(4px, 4px);
+  -webkit-transform: rotate(45deg) translate(4px, 4px);
   transform: rotate(45deg) translate(4px, 4px);
 }
 
 #nav:checked + .nav-open i:nth-child(2) {
+  -ms-transform: translateX(-100px);
+  -webkit-transform: translateX(-100px);
   transform: translateX(-100px);
 }
 
 #nav:checked + .nav-open i:nth-child(3) {
+  -ms-transform: rotate(-45deg) translate(4px, -4px);
+  -webkit-transform: rotate(-45deg) translate(4px, -4px);
   transform: rotate(-45deg) translate(4px, -4px);
 }
 
 #nav:checked ~ .nav-container {
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
   transform: translateY(0);
 }
 
@@ -158,6 +182,8 @@ li img {
 
 #nav:checked ~ .nav-container ul li a {
   color: $darkblue;
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
   transform: scale(1);
     &:hover {
       color: lighten($lightblue, 20%);
@@ -277,8 +303,15 @@ li img {
   }
 
   .user-signed-in {
+
+    display: -ms-flex;
+    display: -webkit-flex;
     display: flex;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
     flex-direction: row;
+    -ms-justify-content: flex-end;
+    -webkit-justify-content: flex-end;
     justify-content: flex-end;
     padding-top: 9px;
       li {
@@ -291,7 +324,11 @@ li img {
   }
 
   .user-info {
+    display: -webkit-flex;
+    display: -ms-flex;
     display: flex;
+    -webkit-justify-content: flex-end;
+    -ms-justify-content: flex-end;
     justify-content: flex-end;
       li {
         color: $offwhite;
@@ -303,7 +340,11 @@ li img {
   }
 
   .shopping {
+    display: -ms-flex;
+    display: -webkit-flex;
     display: flex;
+    -ms-justify-content: flex-end;
+    -webkit-justify-content: flex-end;
     justify-content: flex-end;
       a, li {
         color: $offwhite;
@@ -348,6 +389,8 @@ li img {
   /* Menu Icons */
 
   .menu-items {
+    display: -ms-flex;
+    display: -webkit-flex;
     display: flex;
     text-align: center;
     padding-left: 3em;
@@ -373,6 +416,14 @@ li img {
     background-repeat: no-repeat;
   }
 
+  @-webkit-keyframes rockingHorse {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-20deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(20deg);}
+    100% { transform: rotate(0deg);}
+  }
+
   @keyframes rockingHorse {
     0% { transform: rotate(0deg); }
     25% { transform: rotate(-20deg); }
@@ -382,6 +433,8 @@ li img {
   }
 
   .rocking {
+    -ms-animation: 1.5s linear 0s infinite rockingHorse;
+    -webkit-animation: 1.5s linear 0s infinite rockingHorse;
     animation: 1.5s linear 0s infinite rockingHorse;
   }
 
@@ -451,7 +504,11 @@ li img {
   }
 
   .border-row {
+    display: -ms-flex;
+    display: -webkit-flex;
     display: flex;
+    -ms-justify-content: flex-end;
+    -webkit-justify-content: flex-end;
     justify-content: flex-end;
     margin-right: 0;
   }
@@ -464,6 +521,6 @@ li img {
   }
 
   .shipping-col > p {
-    text-align: center;
+    text-align: right;
   }
 }
