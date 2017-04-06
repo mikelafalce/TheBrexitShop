@@ -47,11 +47,15 @@ input#product_image {
 
 /* Products Show -- per Category */
 
-.product-category {
-  text-align: left;
+h6.product-category  {
+  display: none;
 }
 
 .product-n-category {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
   text-align: center;
   margin-bottom: 2em;
     img {
@@ -102,6 +106,14 @@ input#product_image {
 
 @media only screen and (min-width: 768px) {
 
+  .product-c-show {
+    text-align: center;
+  }
+
+  h6.product-category  {
+    display: initial;
+  }
+
   .indexed-product {
     text-align: left;
   }
@@ -124,7 +136,7 @@ input#product_image {
   }
 
   .category-show {
-    margin-top: 3.5em;
+    margin-top: 2.25em;
     margin-bottom: 8em;
   }
 }
@@ -140,7 +152,7 @@ input#product_image {
   }
 
   .category-show {
-    margin-bottom: 5em;
+    margin-bottom: 3.5em;
     margin-left: 4em;
   }
 }

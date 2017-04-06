@@ -19,8 +19,8 @@
           <div class="small-12 medium-2 large-2 columns text-center" data-equalizer-watch>
             <%= link_to 'View', product_path(product), :class => "special-scale" %>
               <% if user_signed_in? && can?(:manage, @product) %>
-                <%= link_to 'Edit', edit_product_path(product) %>
-                <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= link_to 'Edit', edit_product_path(product), :class => "special-scale" %>
+                <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, :class => "special-scale" %>
               <% end %>
           </div>
         </div>

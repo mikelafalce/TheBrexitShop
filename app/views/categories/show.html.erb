@@ -1,16 +1,18 @@
 <div class="row category-show">
-  <div class="small-12 small-offset-1 medium-10 medium-offset-1 large-10 large-offset-1 columns">
-    <h6 class="product-category">Products under <%= @category.name %> </h6>
+  <div class="product-c-show small-12 small-offset-1 medium-10 medium-offset-1 large-10 large-offset-1 columns">
+    <h6 class="product-category">Products under <%= @category.name %></h6>
       <% if @products.blank? %>
         <p>No products found <p>
       <% else %>
-        <div class="row">
+        <div class="row" data-equalizer-watch>
           <% @products.each do |p| %>
-            <div class="product-n-category small-10 medium-6 large-4 columns">
-                <%= image_tag p.image.url(:single_display) if p.image.present? %>
-                <p class="product-t-text"><%= p.title  %></p>
-                <p><%= quid(p.price) %></p>
-                <%= link_to 'View', product_path(p) %>
+            <div class="product-n-category small-10 medium-6 large-4 columns" data-equalizer-watch>
+                <%= image_tag p.image.url(:list_display) if p.image.present? %>
+                <div class="additional-p-details">
+                  <p class="product-t-text"><%= p.title  %></p>
+                  <p><%= quid(p.price) %></p>
+                  <%= link_to 'View', product_path(p) %>
+                </div>
             </div>
           <% end %>
         </div>
