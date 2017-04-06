@@ -1,8 +1,4 @@
 /* SLIDER */
-$main: #E26A6A;
-$secondary: #ECF0F1;
-$slider: #1ABC9C;
-
 #slider {
   position: relative;
   overflow: hidden;
@@ -20,9 +16,8 @@ $slider: #1ABC9C;
       float: left;
       margin: 0;
       padding: 0;
-      width: 450px;
+      width: 750px;
       height: 300px;
-      background: $slider;
       text-align: center;
       line-height: 300px;
     }
@@ -36,8 +31,8 @@ $slider: #1ABC9C;
     padding: 2% 1.5%;
     width: auto;
     height: auto;
-    background: darken($slider, 15%);
-    color: $secondary;
+    background: $lightblue;
+    color: $offwhite;
     text-decoration: none;
     font-weight: 600;
     font-size: 18px;
