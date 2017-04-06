@@ -4,13 +4,13 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="750px"
 	 height="300px" viewBox="0 0 750 300" enable-background="new 0 0 750 300" xml:space="preserve">
 <g id="Layer_2">
-	<rect x="2" y="-5" fill="#F2F2F2" width="751" height="303"/>
+	<rect x="2" y="-5" fill="#F3F2F1" width="751" height="303"/>
 </g>
 <g id="Shape_1_">
 	<path fill="#ED9498" d="M555.56,37.215c30.485,58.442-86.118,187.039-195.761,244.229c-109.641,57.188,21.223-79.503-9.26-137.947
 		c-30.483-58.442-242.765-13.593-133.121-70.781C327.058,15.528,525.075-21.229,555.56,37.215z"/>
 	
-		<text transform="matrix(0.9942 -0.1076 0.1076 0.9942 368.2583 192.7783)" fill="#FFFFFF" font-family="'Raleway-Light'" font-size="18">(bobblehead)</text>
+		<text transform="matrix(0.9942 -0.1076 0.1076 0.9942 368.2583 192.7783)" fill="#F3F2F1" font-family="'Raleway-Light'" font-size="18">(bobblehead)</text>
 </g>
 <g id="Text">
 	
